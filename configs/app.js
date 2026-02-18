@@ -6,6 +6,8 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import { dbConnection } from './db.js';  
 import userRoutes from '../src/user/user.routes.js';
+import commentRoutes from '../src/comment/comment.routes.js';
+import postRoutes from '../src/post/post.routes.js';
 
 class App {
     constructor() {
@@ -31,14 +33,15 @@ class App {
     }
 
     routes() {
-        
+        this.app.use('/post', postRoutes);
         this.app.use('/user', userRoutes);
-                
+        this.app.use('/comment', commentRoutes);        
     }
 
     listen() {
         this.app.listen(this.port, () => {
             console.log(`Servidor corriendo en el puerto ${this.port}`);
+            console.log(`URL Base: http://localhost:${this.port}`);
         });
     }
 }
