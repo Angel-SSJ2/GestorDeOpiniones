@@ -1,10 +1,11 @@
 {
   "info": {
-    "_postman_id": "bc05a6ac-c5a2-47e5-a2f0-ed958477517b",
+    "_postman_id": "f1000172-22c0-4a67-8072-ad697abee7cf",
     "name": "Gestor de Opiniones - Angel Rodriguez",
     "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "52272201"
+    "_exporter_id": "48145712",
+    "_collection_link": "https://go.postman.co/collection/48145712-f1000172-22c0-4a67-8072-ad697abee7cf?source=collection_link"
   },
   "item": [
     {
@@ -13,24 +14,129 @@
         {
           "name": "Register",
           "request": {
-            "method": "GET",
-            "header": []
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Juan\",\r\n  \"surname\": \"Pérez\",\r\n  \"username\": \"jperez2024\",\r\n  \"email\": \"juan.perez@example.com\",\r\n  \"phone\": \"1234-5678\",\r\n  \"password\": \"password123\",\r\n  \"status\": \"active\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/user/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "user",
+                "register"
+              ]
+            }
           },
           "response": []
         },
         {
           "name": "Login",
           "request": {
-            "method": "GET",
-            "header": []
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"jperez2024\",\r\n  \"password\": \"password123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/user/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "user",
+                "login"
+              ]
+            }
           },
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Edit",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"oldPassword\": \"password123\",\r\n  \"name\": \"Juan Alberto\",\r\n  \"surname\": \"Pérez Sosa\",\r\n  \"newPassword\": \"nuevoPassword456\" \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/user/edit/69a5945f3d77b5b649fe1188",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "user",
+                "edit",
+                "69a5945f3d77b5b649fe1188"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar",
           "request": {
             "method": "GET",
-            "header": []
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/user/all",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "user",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/user/delete/69a5a2c2108cb548d918c4ab",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "user",
+                "delete",
+                "69a5a2c2108cb548d918c4ab"
+              ]
+            }
           },
           "response": []
         }
@@ -42,24 +148,129 @@
         {
           "name": "Create",
           "request": {
-            "method": "GET",
-            "header": []
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Mi primer post en Node.js\",\r\n  \"category\": \"Programación\",\r\n  \"content\": \"Este es el contenido de mi post, aprendiendo a usar Postman.\",\r\n  \"author\": \"69a5945f3d77b5b649fe1188\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/post/create",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "post",
+                "create"
+              ]
+            }
           },
           "response": []
         },
         {
           "name": "update",
           "request": {
-            "method": "GET",
-            "header": []
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"authorId\": \"69a5945f3d77b5b649fe1188\",\r\n  \"title\": \"Título actualizado\",\r\n  \"content\": \"Contenido editado con éxito.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/post/update/69a598ca3d77b5b649fe1193",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "post",
+                "update",
+                "69a598ca3d77b5b649fe1193"
+              ]
+            }
           },
           "response": []
         },
         {
           "name": "Delete",
           "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"authorId\": \"69a5945f3d77b5b649fe1188\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/post/delete/69a598ca3d77b5b649fe1193",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "post",
+                "delete",
+                "69a598ca3d77b5b649fe1193"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar",
+          "request": {
             "method": "GET",
-            "header": []
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/post/all",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "post",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar por Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/post/69a59ad03d77b5b649fe1199",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "post",
+                "69a59ad03d77b5b649fe1199"
+              ]
+            }
           },
           "response": []
         }
@@ -71,24 +282,110 @@
         {
           "name": "Add",
           "request": {
-            "method": "GET",
-            "header": []
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"text\": \"¡Excelente post! Me ayudó mucho con mi proyecto.\",\r\n  \"post\": \"69a59ad03d77b5b649fe1199\",\r\n  \"author\": \"69a5945f3d77b5b649fe1188\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/comment/add",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "comment",
+                "add"
+              ]
+            }
           },
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "edit",
           "request": {
-            "method": "GET",
-            "header": []
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"authorId\": \"69a5945f3d77b5b649fe1188\",\r\n  \"text\": \"Comentario editado: ¡Realmente excelente post!\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/comment/update/69a59aeb3d77b5b649fe119b",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "comment",
+                "update",
+                "69a59aeb3d77b5b649fe119b"
+              ]
+            }
           },
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"authorId\": \"69a5945f3d77b5b649fe1188\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/comment/delete/69a59aeb3d77b5b649fe119b",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "comment",
+                "delete",
+                "69a59aeb3d77b5b649fe119b"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar por Post",
           "request": {
             "method": "GET",
-            "header": []
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/comment/post/69a59ad03d77b5b649fe1199",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "comment",
+                "post",
+                "69a59ad03d77b5b649fe1199"
+              ]
+            }
           },
           "response": []
         }

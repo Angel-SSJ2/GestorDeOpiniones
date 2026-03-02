@@ -1,7 +1,8 @@
 'use strict';
 
 import { Router } from 'express';
-import { addComment, updateComment, deleteComment } from './comment.controller.js';
+import { addComment, updateComment, deleteComment, getCommentsByPost } from './comment.controller.js';
+import { get } from 'mongoose';
 
 const api = Router();
 
@@ -13,5 +14,8 @@ api.put('/update/:id', updateComment);
 
 // Ruta para eliminar un comentario 
 api.delete('/delete/:id', deleteComment);
+
+//buscar
+api.get('/post/:postId', getCommentsByPost);
 
 export default api;

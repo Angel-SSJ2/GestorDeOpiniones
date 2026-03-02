@@ -90,3 +90,21 @@ export const deleteComment = async (req, res) => {
         });
     }
 };
+
+export const getCommentsByPost = async (req, res) => {
+    try {
+        const { postId } = req.params;
+        const comments = await Comment.find({ post: postId }).populate('author', 'username');
+        
+        if (comments.length === 0) {
+    return res.status(404).send({ 
+        success: false, 
+        message: 'Aún no hay comentarios para esta publicación' 
+    });
+    }
+        return res.send({ success: true, comments });
+
+    } catch (error) {
+        return res.status(500).send({ success: false, error: error.message });
+    }
+};
